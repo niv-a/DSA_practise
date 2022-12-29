@@ -1,22 +1,25 @@
 #include<iostream>
 using namespace std;
 
-void swapped(int n, int arr[]){
-    
-    for (int i=0;i,n;i++){
+void swapped(int arr[],int n){
+    int temp =0;
+    for (int i=0;i<n;i+=2){
         if (i+1<n){
-            swap(arr[i],arr[i+1]);
-        }
-        i+=2;    
+            // swap(arr[i],arr[i+1]);
+            temp=arr[i+1];
+            arr[i+1]=arr[i];
+            arr[i]=temp;
+
+        }    
     }
 
 }
 
-void print(int n, int arr[]){
+void print(int arr[],int n){
     cout<<"The array with alternate swapped elemets"<<endl;
     for(int i=0;i<n;i++){
-        cout<<arr[i];    
-    }
+        cout<<arr[i]<<" ";    
+    } cout<<endl;
 }
 
 int main(){
@@ -34,7 +37,7 @@ int main(){
 
     swapped(arr,n);
 
-    cout<<"the reversed array is"<<endl;
+    cout<<"the swapped array is"<<endl;
     print(arr,n);
     return 0;
 }
